@@ -1,0 +1,200 @@
+
+14-S5750-1#
+14-S5750-1#enable
+
+Password:
+Password:
+Password:
+
+% Access denied
+14-S5750-1#
+14-S5750-1#enable 14
+14-S5750-1#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+14-S5750-1(config)#show vlan id
+VLAN Name                             Status    Ports     
+---- -------------------------------- --------- -----------------------------------
+   1 VLAN0001                         STATIC    Gi0/1, Gi0/2, Gi0/3, Gi0/4            
+                                                Gi0/6, Gi0/7, Gi0/8, Gi0/9            
+                                                Gi0/10, Gi0/11, Gi0/12, Gi0/13        
+                                                Gi0/14, Gi0/15, Gi0/16, Gi0/17        
+                                                Gi0/18, Gi0/19, Gi0/20, Gi0/21        
+                                                Gi0/22, Gi0/23, Gi0/24, Gi0/25        
+                                                Gi0/26, Gi0/27, Gi0/28                
+  20 technical                        STATIC    Gi0/5, Gi0/24                         
+14-S5750-1(config)#exit
+14-S5750-1#*Jul  5 06:27:50: %SYS-5-CONFIG_I: Configured from console by console
+
+14-S5750-1#ping 172.16.14.2  
+Sending 5, 100-byte ICMP Echoes to 172.16.14.2, timeout is 2 seconds:
+  < press Ctrl+C to break >
+.....
+Success rate is 0 percent (0/5)
+14-S5750-1#*Jul  5 06:28:16: %LINK-3-UPDOWN: Interface GigabitEthernet 0/4, changed state to down.
+*Jul  5 06:28:16: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/4, changed state to down.
+*Jul  5 06:28:23: %LLDP-4-CREATEREM: Port GigabitEthernet 0/1 created one new neighbor, Chassis ID is 4433.4c0e.ab7d, Port ID is 4433.4c0e.ab7d.
+*Jul  5 06:28:24: %LINK-3-UPDOWN: Interface GigabitEthernet 0/1, changed state to up.
+*Jul  5 06:28:24: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/1, changed state to up.
+*Jul  5 06:30:02: %LINK-3-UPDOWN: Interface GigabitEthernet 0/24, changed state to up.
+*Jul  5 06:30:02: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/24, changed state to up.
+
+14-S5750-1#
+14-S5750-1#
+14-S5750-1#ping 172.16.14.2
+Sending 5, 100-byte ICMP Echoes to 172.16.14.2, timeout is 2 seconds:
+  < press Ctrl+C to break >
+*Jul  5 06:30:29: %LLDP-4-CREATEREM: Port GigabitEthernet 0/24 created one new neighbor, Chassis ID is 5869.6c15.5756, Port ID is Gi0/23.
+.
+Success rate is 0 percent (0/1)
+14-S5750-1#
+14-S5750-1#ping 172.16.14.2
+Sending 5, 100-byte ICMP Echoes to 172.16.14.2, timeout is 2 seconds:
+  < press Ctrl+C to break >
+.....
+Success rate is 0 percent (0/5)
+14-S5750-1#*Jul  5 06:32:01: %LINK-3-UPDOWN: Interface GigabitEthernet 0/1, changed state to down.
+*Jul  5 06:32:01: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/1, changed state to down.
+*Jul  5 06:32:05: %LLDP-4-CREATEREM: Port GigabitEthernet 0/2 created one new neighbor, Chassis ID is 0088.9900.0ac5, Port ID is 0088.9900.0ac5.
+*Jul  5 06:32:06: %LINK-3-UPDOWN: Interface GigabitEthernet 0/2, changed state to up.
+*Jul  5 06:32:06: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/2, changed state to up.
+
+14-S5750-1#
+14-S5750-1#
+14-S5750-1#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+14-S5750-1(config)#show vlan id   
+VLAN Name                             Status    Ports     
+---- -------------------------------- --------- -----------------------------------
+   1 VLAN0001                         STATIC    Gi0/1, Gi0/2, Gi0/3, Gi0/4            
+                                                Gi0/6, Gi0/7, Gi0/8, Gi0/9            
+                                                Gi0/10, Gi0/11, Gi0/12, Gi0/13        
+                                                Gi0/14, Gi0/15, Gi0/16, Gi0/17        
+                                                Gi0/18, Gi0/19, Gi0/20, Gi0/21        
+                                                Gi0/22, Gi0/23, Gi0/24, Gi0/25        
+                                                Gi0/26, Gi0/27, Gi0/28                
+  20 technical                        STATIC    Gi0/5, Gi0/24                         
+14-S5750-1(config)#exit        
+14-S5750-1#*Jul  5 06:33:15: %SYS-5-CONFIG_I: Configured from console by console
+14-S5750-1#ping 172.16.14.2  
+Sending 5, 100-byte ICMP Echoes to 172.16.14.2, timeout is 2 seconds:
+  < press Ctrl+C to break >
+.....
+Success rate is 0 percent (0/5)
+14-S5750-1#*Jul  5 06:34:05: %LINK-3-UPDOWN: Interface GigabitEthernet 0/2, changed state to down.
+*Jul  5 06:34:05: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/2, changed state to down.
+*Jul  5 06:34:09: %LLDP-4-CREATEREM: Port GigabitEthernet 0/1 created one new neighbor, Chassis ID is 0088.9900.0ac5, Port ID is 0088.9900.0ac5.
+*Jul  5 06:34:10: %LINK-3-UPDOWN: Interface GigabitEthernet 0/1, changed state to up.
+*Jul  5 06:34:10: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/1, changed state to up.
+
+14-S5750-1#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+14-S5750-1(config)#show interfaces gigabitethernet switchport
+                                                   ^
+% Invalid input detected at '^' marker.
+
+14-S5750-1(config)#show interfaces gigabitethernet 0/24 switchport
+Interface                        Switchport Mode      Access Native Protected VLAN lists
+-------------------------------- ---------- --------- ------ ------ --------- ----------
+GigabitEthernet 0/24             enabled    TRUNK     1      1      Disabled  ALL
+14-S5750-1(config)#*Jul  5 06:39:43: %LINK-3-UPDOWN: Interface GigabitEthernet 0/24, changed state to down.
+*Jul  5 06:39:43: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/24, changed state to down.
+*Jul  5 06:39:48: %LINK-3-UPDOWN: Interface GigabitEthernet 0/23, changed state to up.
+*Jul  5 06:39:48: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/23, changed state to up.
+*Jul  5 06:39:59: %LLDP-4-CREATEREM: Port GigabitEthernet 0/23 created one new neighbor, Chassis ID is 5869.6c15.5756, Port ID is Gi0/23.
+*Jul  5 06:41:29: %LLDP-4-AGEOUTREM: Port GigabitEthernet 0/24 one neighbor aged out, Chassis ID is 5869.6c15.5756, Port ID is Gi0/23.
+*Jul  5 06:41:42: %LINK-3-UPDOWN: Interface GigabitEthernet 0/23, changed state to down.
+*Jul  5 06:41:42: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/23, changed state to down.
+*Jul  5 06:41:47: %LINK-3-UPDOWN: Interface GigabitEthernet 0/24, changed state to up.
+*Jul  5 06:41:47: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/24, changed state to up.
+*Jul  5 06:42:14: %LLDP-4-CREATEREM: Port GigabitEthernet 0/24 created one new neighbor, Chassis ID is 5869.6c15.5756, Port ID is Gi0/24.
+*Jul  5 06:43:29: %LLDP-4-AGEOUTREM: Port GigabitEthernet 0/23 one neighbor aged out, Chassis ID is 5869.6c15.5756, Port ID is Gi0/23.
+*Jul  5 06:43:52: %LLDP-4-CREATEREM: Port GigabitEthernet 0/3 created one new neighbor, Chassis ID is 4433.4c0e.ab7d, Port ID is 4433.4c0e.ab7d.
+*Jul  5 06:43:54: %LINK-3-UPDOWN: Interface GigabitEthernet 0/3, changed state to up.
+*Jul  5 06:43:54: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/3, changed state to up.
+*Jul  5 06:44:40: %LINK-3-UPDOWN: Interface GigabitEthernet 0/3, changed state to down.
+*Jul  5 06:44:40: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/3, changed state to down.
+
+14-S5750-1(config)#
+14-S5750-1(config)#vlan 5
+14-S5750-1(config-vlan)#name tech
+14-S5750-1(config-vlan)#xit
+% Unknown command.
+
+14-S5750-1(config-vlan)#exit
+14-S5750-1(config)#interface gigabitethernet 0/1
+14-S5750-1(config-if-GigabitEthernet 0/1)#switchport access vlan 5
+14-S5750-1(config-if-GigabitEthernet 0/1)#exit
+14-S5750-1(config)#exit             
+14-S5750-1#*Jul  5 06:45:18: %SYS-5-CONFIG_I: Configured from console by console
+   
+14-S5750-1#show interface gigabitethernet 0/24
+Index(dec):24 (hex):18
+GigabitEthernet 0/24 is UP  , line protocol is UP    
+Hardware is Broadcom 5464 GigabitEthernet
+Interface address is: no ip address
+  MTU 1500 bytes, BW 1000000 Kbit
+  Encapsulation protocol is Bridge, loopback not set
+  Keepalive interval is 10 sec , set
+  Carrier delay is 2 sec
+  Rxload is 1/255, Txload is 1/255
+  Switchport attributes:
+    interface's description:""
+    admin medium-type is Copper, oper medium-type is Copper
+    lastchange time: 0 Day: 1 Hour:19 Minute:42 Second
+    current status duration: 0 Day: 0 Hour: 3 Minute:42 Second
+    Priority is 0
+    admin duplex mode is AUTO, oper duplex is Full
+    admin speed is AUTO, oper speed is 1000M
+    flow control admin status is OFF, flow control oper status is OFF
+    admin negotiation mode is OFF, oper negotiation state is ON
+    Storm Control: Broadcast is ON, Multicast is OFF, Unicast is ON
+  Port-type: trunk
+    Native vlan: 1
+    Allowed vlan lists: 1-4094
+    Active vlan lists: 1,5,20
+          
+14-S5750-1#configure
+Enter configuration commands, one per line.  End with CNTL/Z.
+14-S5750-1(config)#interface gigabitethernet 0/24
+14-S5750-1(config-if-GigabitEthernet 0/24)#switchport mode hybrid
+14-S5750-1(config-if-GigabitEthernet 0/24)#exit
+14-S5750-1(config)#exir
+% Unknown command.
+
+14-S5750-1(config)#exit
+14-S5750-1#*Jul  5 06:51:21: %SYS-5-CONFIG_I: Configured from console by console
+
+14-S5750-1#show interface gigabitethernet 0/24
+Index(dec):24 (hex):18
+GigabitEthernet 0/24 is UP  , line protocol is UP    
+Hardware is Broadcom 5464 GigabitEthernet
+Interface address is: no ip address
+  MTU 1500 bytes, BW 1000000 Kbit
+  Encapsulation protocol is Bridge, loopback not set
+  Keepalive interval is 10 sec , set
+  Carrier delay is 2 sec
+  Rxload is 1/255, Txload is 1/255
+  Switchport attributes:
+    interface's description:""
+    admin medium-type is Copper, oper medium-type is Copper
+    lastchange time: 0 Day: 1 Hour:19 Minute:42 Second
+    current status duration: 0 Day: 0 Hour: 9 Minute:43 Second
+    Priority is 0
+    admin duplex mode is AUTO, oper duplex is Full
+    admin speed is AUTO, oper speed is 1000M
+    flow control admin status is OFF, flow control oper status is OFF
+    admin negotiation mode is OFF, oper negotiation state is ON
+    Storm Control: Broadcast is ON, Multicast is OFF, Unicast is ON
+  Port-type: hybrid
+    Tagged vlan id: 2-4094
+    Untagged vlan id: 1
+  5 minutes input rate 1558 bits/sec, 0 packets/sec
+  5 minutes output rate 1565 bits/sec, 0 packets/sec
+    690 packets input, 173977 bytes, 0 no buffer, 0 dropped
+    Received 274 broadcasts, 0 runts, 0 giants
+    0 input errors, 0 CRC, 0 frame, 0 overrun, 0 abort
+    576 packets output, 175278 bytes, 0 underruns , 0 dropped
+ --More-- *Jul  5 06:52:53: %LINK-3-UPDOWN: Interface GigabitEthernet 0/24, changed state to down.
+*Jul  5 06:52:53: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/24, changed state to down.
+*Jul  5 06:53:02: %LINK-3-UPDOWN: Interface GigabitEthernet 0/24, changed state to up.
+*Jul  5 06:53:02: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/24, changed state to up.

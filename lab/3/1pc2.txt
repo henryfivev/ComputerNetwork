@@ -1,0 +1,568 @@
+
+14-S5750-2(config-if-GigabitEthernet 0/5)#?
+Interface configuration commands: 
+  anti-arp-spoofing     Prevent gateway and arp cheat
+  arp-check             Port-security arp-check
+  bandwidth             Set bandwidth informational parameter
+  bpdu                  Bridge Protocol Data Unit
+  carrier-delay         Specify delay for interface transitions
+  default               Set a command to its defaults
+  description           Interface specific description
+  dot1q                 The dot1q configuration
+  dot1q-Tunnel          Configure dot1q-tunnel port
+  dot1x                 Configure dot1x
+  duplex                Set switchport duplex mode
+  eee                   Set eee
+  end                   Exit from interface configuration mode
+  exit                  Exit from interface configuration mode
+  expert                Expert extended ACL
+  flowcontrol           Set the flow-control value for an interface
+  frame-tag             Server Manufacturer Ethernet Frame Tag
+  gvrp                  GVRP configure command
+  help                  Description of the interactive help system
+  inner-priority-trust  Copy inner-tag priority to outer-tag
+  ip                    Interface Internet Protocol config commands
+  ipv6                  IPv6 interface subcommands
+          
+14-S5750-2(config-if-GigabitEthernet 0/5)#exit
+14-S5750-2(config)#?
+Configure commands: 
+  aaa                       Authentication,  Authorization and Accounting.
+  access-list               Add an access list entry
+  address-bind              Set a binding of IP and MAC address
+  aggregateport             Aggregate port configuration
+  alias                     Create command alias
+  archive                   Archive the configuration
+  arp                       Set ARP information
+  banner                    Define a login banner
+  boot                      Set boot system config
+  bridge-frame              Bridge-frame
+  class-map                 Configure QoS Class Map
+  clock                     Manage the system clock
+  cpu                       Config cpu item
+  cpu-log                   Config device cpu using rate log item
+  cpu-protect               Config cpu-protect
+  crypto                    Crypto command
+  default                   Set a command to its defaults
+  define                    Interface range macro definition
+  device-priority           Setup device's priority
+  dot1q-vlan-current-entry  Dot1qVlanCurrentEntry
+  dot1x                     Configure dot1x
+  drr-queue                 Configure Deficit Round Robin queues
+          
+14-S5750-2(config)#ping 172.16.14.1             
+% Unknown command.
+
+14-S5750-2(config)#
+14-S5750-2(config)#
+14-S5750-2(config)#
+14-S5750-2(config)#
+14-S5750-2(config)#show vlan id 10
+VLAN Name                             Status    Ports     
+---- -------------------------------- --------- -----------------------------------
+  10 sales                            STATIC    Gi0/5                                 
+14-S5750-2(config)#ping?
+% Unrecognized command.
+
+14-S5750-2(config)#exit   
+14-S5750-2#*Sep 16 14:34:11: %SYS-5-CONFIG_I: Configured from console by console
+
+14-S5750-2#disable 14
+14-S5750-2#disenable 14
+
+Translating "disenable"...
+% Unrecognized host or address, or protocol not running.
+14-S5750-2#?
+Exec commands: 
+  <1-99>      Session number to resume
+  cd          Change current working directory
+  clear       Reset functions
+  clock       Manage the system clock
+  configure   Enter configuration mode
+  debug       Debugging functions (see also 'undebug')
+  disable     Turn off privileged commands
+  disconnect  Disconnect an existing network connection
+  enable      Turn on privileged commands
+  execute     Execute scripts
+  exit        Exit from the EXEC
+  help        Description of the interactive help system
+  http        Exec http cmd
+  ip          Internet protocol 
+  ipv6        Internet protocol version 6
+  lock        Lock the terminal
+  more        Print logging information in flash 
+  no          Disable debugging functions
+  ping        Send echo messages
+  pwd         Print name of current/working directory
+  reload      Halt and perform a cold restart
+  renew       Renew
+          
+14-S5750-2#ping 172.16.14.1
+Sending 5, 100-byte ICMP Echoes to 172.16.14.1, timeout is 2 seconds:
+  < press Ctrl+C to break >
+.....
+Success rate is 0 percent (0/5)
+14-S5750-2#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+14-S5750-2(config)#vlan 20
+14-S5750-2(config-vlan)#name technical
+14-S5750-2(config-vlan)#exit
+14-S5750-2(config)#interface gigabitethernet 0/15
+14-S5750-2(config-if-GigabitEthernet 0/15)#switchport access vlan 20
+14-S5750-2(config-if-GigabitEthernet 0/15)#show vlan id 20
+VLAN Name                             Status    Ports     
+---- -------------------------------- --------- -----------------------------------
+  20 technical                        STATIC    Gi0/15                                
+14-S5750-2(config-if-GigabitEthernet 0/15)#show vlan id   
+VLAN Name                             Status    Ports     
+---- -------------------------------- --------- -----------------------------------
+   1 VLAN0001                         STATIC    Gi0/1, Gi0/2, Gi0/3, Gi0/4            
+                                                Gi0/6, Gi0/7, Gi0/8, Gi0/9            
+                                                Gi0/10, Gi0/11, Gi0/12, Gi0/13        
+                                                Gi0/14, Gi0/16, Gi0/17, Gi0/18        
+                                                Gi0/19, Gi0/20, Gi0/21, Gi0/22        
+                                                Gi0/23, Gi0/24, Gi0/25, Gi0/26        
+                                                Gi0/27, Gi0/28                        
+  10 sales                            STATIC    Gi0/5                                 
+  20 technical                        STATIC    Gi0/15                                
+14-S5750-2(config-if-GigabitEthernet 0/15)#exit
+14-S5750-2(config)#interface gigabitethernet  0/24
+14-S5750-2(config-if-GigabitEthernet 0/24)#switchport mode trunk    
+14-S5750-2(config-if-GigabitEthernet 0/24)#exit 
+14-S5750-2(config)#exit
+14-S5750-2#*Sep 16 14:43:47: %SYS-5-CONFIG_I: Configured from console by console
+
+14-S5750-2#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+14-S5750-2(config)#show interfaces gigabitethernet  0/24 switchport
+Interface                        Switchport Mode      Access Native Protected VLAN lists
+-------------------------------- ---------- --------- ------ ------ --------- ----------
+GigabitEthernet 0/24             enabled    TRUNK     1      1      Disabled  ALL
+14-S5750-2(config)#show vlan id 10                                 
+VLAN Name                             Status    Ports     
+---- -------------------------------- --------- -----------------------------------
+  10 sales                            STATIC    Gi0/5, Gi0/24                         
+14-S5750-2(config)#show vlan id   
+VLAN Name                             Status    Ports     
+---- -------------------------------- --------- -----------------------------------
+   1 VLAN0001                         STATIC    Gi0/1, Gi0/2, Gi0/3, Gi0/4            
+                                                Gi0/6, Gi0/7, Gi0/8, Gi0/9            
+                                                Gi0/10, Gi0/11, Gi0/12, Gi0/13        
+                                                Gi0/14, Gi0/16, Gi0/17, Gi0/18        
+                                                Gi0/19, Gi0/20, Gi0/21, Gi0/22        
+                                                Gi0/23, Gi0/24, Gi0/25, Gi0/26        
+                                                Gi0/27, Gi0/28                        
+  10 sales                            STATIC    Gi0/5, Gi0/24                         
+  20 technical                        STATIC    Gi0/15, Gi0/24                        
+14-S5750-2(config)#ping 172.16.14.1
+% Unknown command.
+
+14-S5750-2(config)#exit
+14-S5750-2#*Sep 16 14:54:16: %SYS-5-CONFIG_I: Configured from console by console
+
+14-S5750-2#ping 172.16.14.1  
+Sending 5, 100-byte ICMP Echoes to 172.16.14.1, timeout is 2 seconds:
+  < press Ctrl+C to break >
+.....
+Success rate is 0 percent (0/5)
+14-S5750-2#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+14-S5750-2(config)#no ip address
+                          ^
+% Invalid input detected at '^' marker.
+
+14-S5750-2(config)#interface
+% Incomplete command.
+
+14-S5750-2(config)#interface?
+interface
+
+14-S5750-2(config)#interface gigabitethernet 0/1                   
+14-S5750-2(config-if-GigabitEthernet 0/1)#no ip address
+                                                 ^
+% Invalid input detected at '^' marker.
+
+14-S5750-2(config-if-GigabitEthernet 0/1)#eexit        
+% Unknown command.
+
+14-S5750-2(config-if-GigabitEthernet 0/1)#exit 
+14-S5750-2(config)#show vlan id                 
+VLAN Name                             Status    Ports     
+---- -------------------------------- --------- -----------------------------------
+   1 VLAN0001                         STATIC    Gi0/1, Gi0/2, Gi0/3, Gi0/4            
+                                                Gi0/6, Gi0/7, Gi0/8, Gi0/9            
+                                                Gi0/10, Gi0/11, Gi0/12, Gi0/13        
+                                                Gi0/14, Gi0/16, Gi0/17, Gi0/18        
+                                                Gi0/19, Gi0/20, Gi0/21, Gi0/22        
+                                                Gi0/23, Gi0/24, Gi0/25, Gi0/26        
+                                                Gi0/27, Gi0/28                        
+  10 sales                            STATIC    Gi0/5, Gi0/24                         
+  20 technical                        STATIC    Gi0/15, Gi0/24                        
+14-S5750-2(config)#interface gigabitethernet 0/5
+14-S5750-2(config-if-GigabitEthernet 0/5)#no ip address
+                                                 ^
+% Invalid input detected at '^' marker.
+
+14-S5750-2(config-if-GigabitEthernet 0/5)#no ipaddress 
+                                               ^
+% Invalid input detected at '^' marker.
+
+14-S5750-2(config-if-GigabitEthernet 0/5)#exit
+14-S5750-2(config)#no vlan vlan-10
+                           ^
+% Invalid input detected at '^' marker.
+
+14-S5750-2(config)#no vlan 10     
+14-S5750-2(config)#show vlan id
+VLAN Name                             Status    Ports     
+---- -------------------------------- --------- -----------------------------------
+   1 VLAN0001                         STATIC    Gi0/1, Gi0/2, Gi0/3, Gi0/4            
+                                                Gi0/5, Gi0/6, Gi0/7, Gi0/8            
+                                                Gi0/9, Gi0/10, Gi0/11, Gi0/12         
+                                                Gi0/13, Gi0/14, Gi0/16, Gi0/17        
+                                                Gi0/18, Gi0/19, Gi0/20, Gi0/21        
+                                                Gi0/22, Gi0/23, Gi0/24, Gi0/25        
+                                                Gi0/26, Gi0/27, Gi0/28                
+  20 technical                        STATIC    Gi0/15, Gi0/24                        
+14-S5750-2(config)#exit     
+14-S5750-2#*Sep 16 14:58:56: %SYS-5-CONFIG_I: Configured from console by console
+
+14-S5750-2#ping 172.16.14.1
+Sending 5, 100-byte ICMP Echoes to 172.16.14.1, timeout is 2 seconds:
+  < press Ctrl+C to break >
+.....
+Success rate is 0 percent (0/5)
+14-S5750-2#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+14-S5750-2(config)#show vlan id
+VLAN Name                             Status    Ports     
+---- -------------------------------- --------- -----------------------------------
+   1 VLAN0001                         STATIC    Gi0/1, Gi0/2, Gi0/3, Gi0/4            
+                                                Gi0/5, Gi0/6, Gi0/7, Gi0/8            
+                                                Gi0/9, Gi0/10, Gi0/11, Gi0/12         
+                                                Gi0/13, Gi0/14, Gi0/16, Gi0/17        
+                                                Gi0/18, Gi0/19, Gi0/20, Gi0/21        
+                                                Gi0/22, Gi0/23, Gi0/24, Gi0/25        
+                                                Gi0/26, Gi0/27, Gi0/28                
+  20 technical                        STATIC    Gi0/15, Gi0/24                        
+14-S5750-2(config)#exit        
+14-S5750-2#*Sep 16 15:02:02: %SYS-5-CONFIG_I: Configured from console by console
+14-S5750-2#ping 172.16.14.1  
+Sending 5, 100-byte ICMP Echoes to 172.16.14.1, timeout is 2 seconds:
+  < press Ctrl+C to break >
+.....
+Success rate is 0 percent (0/5)
+14-S5750-2#ping 172.16.14.2
+Sending 5, 100-byte ICMP Echoes to 172.16.14.2, timeout is 2 seconds:
+  < press Ctrl+C to break >
+.....
+Success rate is 0 percent (0/5)
+14-S5750-2#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+14-S5750-2(config)#show vlan id
+VLAN Name                             Status    Ports     
+---- -------------------------------- --------- -----------------------------------
+   1 VLAN0001                         STATIC    Gi0/1, Gi0/2, Gi0/3, Gi0/4            
+                                                Gi0/5, Gi0/6, Gi0/7, Gi0/8            
+                                                Gi0/9, Gi0/10, Gi0/11, Gi0/12         
+                                                Gi0/13, Gi0/14, Gi0/16, Gi0/17        
+                                                Gi0/18, Gi0/19, Gi0/20, Gi0/21        
+                                                Gi0/22, Gi0/23, Gi0/24, Gi0/25        
+                                                Gi0/26, Gi0/27, Gi0/28                
+  20 technical                        STATIC    Gi0/15, Gi0/24                        
+14-S5750-2(config)#show vlan id
+VLAN Name                             Status    Ports     
+---- -------------------------------- --------- -----------------------------------
+   1 VLAN0001                         STATIC    Gi0/1, Gi0/2, Gi0/3, Gi0/4            
+                                                Gi0/5, Gi0/6, Gi0/7, Gi0/8            
+                                                Gi0/9, Gi0/10, Gi0/11, Gi0/12         
+                                                Gi0/13, Gi0/14, Gi0/16, Gi0/17        
+                                                Gi0/18, Gi0/19, Gi0/20, Gi0/21        
+                                                Gi0/22, Gi0/23, Gi0/24, Gi0/25        
+                                                Gi0/26, Gi0/27, Gi0/28                
+  20 technical                        STATIC    Gi0/15, Gi0/24                        
+14-S5750-2(config)#exit        
+14-S5750-2#*Sep 16 15:10:42: %SYS-5-CONFIG_I: Configured from console by console
+
+14-S5750-2#ping 172.16.14.1  
+Sending 5, 100-byte ICMP Echoes to 172.16.14.1, timeout is 2 seconds:
+  < press Ctrl+C to break >
+.....
+Success rate is 0 percent (0/5)
+14-S5750-2#ping 172.16.14.1*Sep 16 15:16:14: %LLDP-4-CREATEREM: Port GigabitEthernet 0/1 created one new neighbor, Chassis ID is 4433.4c0e.ab7d, Port ID is 4433.4c0e.ab7d.
+*Sep 16 15:16:15: %LINK-3-UPDOWN: Interface GigabitEthernet 0/1, changed state to up.
+*Sep 16 15:16:15: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/1, changed state to up.
+
+Sending 5, 100-byte ICMP Echoes to 172.16.14.1, timeout is 2 seconds:
+  < press Ctrl+C to break >
+.....
+Success rate is 0 percent (0/5)
+14-S5750-2#
+14-S5750-2#
+14-S5750-2#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+14-S5750-2(config)#show vlan id
+VLAN Name                             Status    Ports     
+---- -------------------------------- --------- -----------------------------------
+   1 VLAN0001                         STATIC    Gi0/1, Gi0/2, Gi0/3, Gi0/4            
+                                                Gi0/5, Gi0/6, Gi0/7, Gi0/8            
+                                                Gi0/9, Gi0/10, Gi0/11, Gi0/12         
+                                                Gi0/13, Gi0/14, Gi0/16, Gi0/17        
+                                                Gi0/18, Gi0/19, Gi0/20, Gi0/21        
+                                                Gi0/22, Gi0/23, Gi0/24, Gi0/25        
+                                                Gi0/26, Gi0/27, Gi0/28                
+  20 technical                        STATIC    Gi0/15, Gi0/24                        
+14-S5750-2(config)#*Sep 16 15:18:10: %LINK-3-UPDOWN: Interface GigabitEthernet 0/1, changed state to down.
+*Sep 16 15:18:10: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/1, changed state to down.
+*Sep 16 15:18:43: %LINK-3-UPDOWN: Interface GigabitEthernet 0/1, changed state to up.
+*Sep 16 15:18:43: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/1, changed state to up.
+
+14-S5750-2#*Sep 16 15:18:50: %SYS-5-CONFIG_I: Configured from console by console
+
+14-S5750-2#
+14-S5750-2#ping 172.16.14.1  
+Sending 5, 100-byte ICMP Echoes to 172.16.14.1, timeout is 2 seconds:
+  < press Ctrl+C to break >
+.....
+Success rate is 0 percent (0/5)
+14-S5750-2#ping 172.16.14.1
+Sending 5, 100-byte ICMP Echoes to 172.16.14.1, timeout is 2 seconds:
+  < press Ctrl+C to break >
+.....
+Success rate is 0 percent (0/5)
+14-S5750-2#ping 172.16.14.1
+Sending 5, 100-byte ICMP Echoes to 172.16.14.1, timeout is 2 seconds:
+  < press Ctrl+C to break >
+.....
+Success rate is 0 percent (0/5)
+14-S5750-2#*Sep 16 15:20:33: %LLDP-4-CREATEREM: Port GigabitEthernet 0/4 created one new neighbor, Chassis ID is 0088.9900.0ac5, Port ID is 0088.9900.0ac5.
+*Sep 16 15:20:34: %LINK-3-UPDOWN: Interface GigabitEthernet 0/4, changed state to up.
+*Sep 16 15:20:34: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/4, changed state to up.
+*Sep 16 15:20:35: %LINK-3-UPDOWN: Interface GigabitEthernet 0/1, changed state to down.
+*Sep 16 15:20:35: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/1, changed state to down.
+*Sep 16 15:22:15: %LINK-3-UPDOWN: Interface GigabitEthernet 0/23, changed state to up.
+*Sep 16 15:22:15: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/23, changed state to up.
+
+14-S5750-2#
+14-S5750-2#
+14-S5750-2#ping 172.16.14.1
+Sending 5, 100-byte ICMP Echoes to 172.16.14.1, timeout is 2 seconds:
+  < press Ctrl+C to break >
+.....
+Success rate is 0 percent (0/5)
+14-S5750-2#*Sep 16 15:22:42: %LLDP-4-CREATEREM: Port GigabitEthernet 0/23 created one new neighbor, Chassis ID is 5869.6c15.59cc, Port ID is Gi0/24.
+*Sep 16 15:23:14: %LINK-3-UPDOWN: Interface GigabitEthernet 0/4, changed state to down.
+*Sep 16 15:23:14: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/4, changed state to down.
+*Sep 16 15:23:15: %LLDP-4-CREATEREM: Port GigabitEthernet 0/2 created one new neighbor, Chassis ID is 0088.9900.0ac5, Port ID is 0088.9900.0ac5.
+*Sep 16 15:23:17: %LINK-3-UPDOWN: Interface GigabitEthernet 0/2, changed state to up.
+*Sep 16 15:23:17: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/2, changed state to up.
+
+14-S5750-2#
+14-S5750-2#ping 172.16.14.1
+Sending 5, 100-byte ICMP Echoes to 172.16.14.1, timeout is 2 seconds:
+  < press Ctrl+C to break >
+.....
+Success rate is 0 percent (0/5)
+14-S5750-2#*Sep 16 15:24:17: %LINK-3-UPDOWN: Interface GigabitEthernet 0/2, changed state to down.
+*Sep 16 15:24:17: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/2, changed state to down.
+
+14-S5750-2#
+14-S5750-2#*Sep 16 15:24:21: %LINK-3-UPDOWN: Interface GigabitEthernet 0/1, changed state to up.
+*Sep 16 15:24:21: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/1, changed state to up.
+
+14-S5750-2#ping 172.16.14.1
+Sending 5, 100-byte ICMP Echoes to 172.16.14.1, timeout is 2 seconds:
+  < press Ctrl+C to break >
+.....
+Success rate is 0 percent (0/5)
+14-S5750-2#ping 172.16.14.1
+Sending 5, 100-byte ICMP Echoes to 172.16.14.1, timeout is 2 seconds:
+  < press Ctrl+C to break >
+.....
+Success rate is 0 percent (0/5)
+14-S5750-2#*Sep 16 15:26:24: %LINK-3-UPDOWN: Interface GigabitEthernet 0/1, changed state to down.
+*Sep 16 15:26:24: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/1, changed state to down.
+*Sep 16 15:26:31: %LINK-3-UPDOWN: Interface GigabitEthernet 0/1, changed state to up.
+*Sep 16 15:26:31: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/1, changed state to up.
+
+14-S5750-2#
+14-S5750-2#ping 172.16.14.1
+Sending 5, 100-byte ICMP Echoes to 172.16.14.1, timeout is 2 seconds:
+  < press Ctrl+C to break >
+.....
+Success rate is 0 percent (0/5)
+14-S5750-2#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+14-S5750-2(config)#show vlan id
+VLAN Name                             Status    Ports     
+---- -------------------------------- --------- -----------------------------------
+   1 VLAN0001                         STATIC    Gi0/1, Gi0/2, Gi0/3, Gi0/4            
+                                                Gi0/5, Gi0/6, Gi0/7, Gi0/8            
+                                                Gi0/9, Gi0/10, Gi0/11, Gi0/12         
+                                                Gi0/13, Gi0/14, Gi0/16, Gi0/17        
+                                                Gi0/18, Gi0/19, Gi0/20, Gi0/21        
+                                                Gi0/22, Gi0/23, Gi0/24, Gi0/25        
+                                                Gi0/26, Gi0/27, Gi0/28                
+  20 technical                        STATIC    Gi0/15, Gi0/24                        
+14-S5750-2(config)#
+14-S5750-2(config)#
+14-S5750-2(config)#
+14-S5750-2(config)#
+14-S5750-2(config)#
+14-S5750-2(config)#
+14-S5750-2(config)#
+14-S5750-2(config)#
+14-S5750-2(config)#
+14-S5750-2(config)#
+14-S5750-2(config)#show interfaces gigabitethernet 0/24 switchport
+Interface                        Switchport Mode      Access Native Protected VLAN lists
+-------------------------------- ---------- --------- ------ ------ --------- ----------
+GigabitEthernet 0/24             enabled    TRUNK     1      1      Disabled  ALL
+14-S5750-2(config)#*Sep 16 15:31:56: %LINK-3-UPDOWN: Interface GigabitEthernet 0/23, changed state to down.
+*Sep 16 15:31:56: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/23, changed state to down.
+*Sep 16 15:32:01: %LINK-3-UPDOWN: Interface GigabitEthernet 0/23, changed state to up.
+*Sep 16 15:32:01: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/23, changed state to up.
+
+14-S5750-2#*Sep 16 15:32:07: %SYS-5-CONFIG_I: Configured from console by console
+14-S5750-2#ping 172.16.14.1  
+Sending 5, 100-byte ICMP Echoes to 172.16.14.1, timeout is 2 seconds:
+  < press Ctrl+C to break >
+....*Sep 16 15:32:28: %LLDP-4-CREATEREM: Port GigabitEthernet 0/23 created one new neighbor, Chassis ID is 5869.6c15.59cc, Port ID is Gi0/23.
+.
+Success rate is 0 percent (0/5)
+14-S5750-2#show vlan
+VLAN Name                             Status    Ports     
+---- -------------------------------- --------- -----------------------------------
+   1 VLAN0001                         STATIC    Gi0/1, Gi0/2, Gi0/3, Gi0/4            
+                                                Gi0/5, Gi0/6, Gi0/7, Gi0/8            
+                                                Gi0/9, Gi0/10, Gi0/11, Gi0/12         
+                                                Gi0/13, Gi0/14, Gi0/16, Gi0/17        
+                                                Gi0/18, Gi0/19, Gi0/20, Gi0/21        
+                                                Gi0/22, Gi0/23, Gi0/24, Gi0/25        
+                                                Gi0/26, Gi0/27, Gi0/28                
+  20 technical                        STATIC    Gi0/15, Gi0/24                        
+14-S5750-2#show interface gigabitethernet 0/23
+Index(dec):23 (hex):17
+GigabitEthernet 0/23 is UP  , line protocol is UP    
+Hardware is Broadcom 5464 GigabitEthernet
+Interface address is: no ip address
+  MTU 1500 bytes, BW 1000000 Kbit
+  Encapsulation protocol is Bridge, loopback not set
+  Keepalive interval is 10 sec , set
+  Carrier delay is 2 sec
+  Rxload is 1/255, Txload is 1/255
+  Switchport attributes:
+    interface's description:""
+    admin medium-type is Copper, oper medium-type is Copper
+    lastchange time: 0 Day: 1 Hour:17 Minute:44 Second
+    current status duration: 0 Day: 0 Hour: 1 Minute:29 Second
+    Priority is 0
+    admin duplex mode is AUTO, oper duplex is Full
+    admin speed is AUTO, oper speed is 1000M
+    flow control admin status is OFF, flow control oper status is OFF
+    admin negotiation mode is OFF, oper negotiation state is ON
+    Storm Control: Broadcast is ON, Multicast is OFF, Unicast is ON
+  Port-type: access
+    Vlan id: 1
+  5 minutes input rate 221 bits/sec, 0 packets/sec
+  5 minutes output rate 214 bits/sec, 0 packets/sec
+          
+14-S5750-2#*Sep 16 15:33:43: %LLDP-4-AGEOUTREM: Port GigabitEthernet 0/23 one neighbor aged out, Chassis ID is 5869.6c15.59cc, Port ID is Gi0/24.
+
+14-S5750-2#show interface gigabitethernet 0/24
+Index(dec):24 (hex):18
+GigabitEthernet 0/24 is DOWN  , line protocol is DOWN    
+Hardware is Broadcom 5464 GigabitEthernet
+Interface address is: no ip address
+  MTU 1500 bytes, BW 1000000 Kbit
+  Encapsulation protocol is Bridge, loopback not set
+  Keepalive interval is 10 sec , set
+  Carrier delay is 2 sec
+  Rxload is 1/255, Txload is 1/255
+  Switchport attributes:
+    interface's description:""
+    admin medium-type is Copper, oper medium-type is Copper
+    lastchange time: 0 Day: 0 Hour: 0 Minute:36 Second
+    current status duration: 0 Day: 1 Hour:18 Minute:54 Second
+    Priority is 0
+    admin duplex mode is AUTO, oper duplex is Unknown
+    admin speed is AUTO, oper speed is Unknown
+    flow control admin status is OFF, flow control oper status is Unknown
+    admin negotiation mode is OFF, oper negotiation state is ON
+    Storm Control: Broadcast is ON, Multicast is OFF, Unicast is ON
+  Port-type: trunk
+    Native vlan: 1
+    Allowed vlan lists: 1-4094
+    Active vlan lists: 1,20
+ --More-- *Sep 16 15:33:55: %LINK-3-UPDOWN: Interface GigabitEthernet 0/23, changed state to down.
+*Sep 16 15:33:55: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/23, changed state to down.
+*Sep 16 15:33:59: %LINK-3-UPDOWN: Interface GigabitEthernet 0/24, changed state to up.
+*Sep 16 15:33:59: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/24, changed state to up.
+*Sep 16 15:34:12: %LLDP-4-CREATEREM: Port GigabitEthernet 0/24 created one new neighbor, Chassis ID is 5869.6c15.59cc, Port ID is Gi0/24.
+  5 minutes input rate 0 bits/sec, 0 packets/sec
+  5 minutes output rate 0 bits/sec, 0 packets/sec
+          
+14-S5750-2#show interface gigabitethernet 0/1 
+Index(dec):1 (hex):1
+GigabitEthernet 0/1 is UP  , line protocol is UP    
+Hardware is Broadcom 5464 GigabitEthernet
+Interface address is: no ip address
+  MTU 1500 bytes, BW 1000000 Kbit
+  Encapsulation protocol is Bridge, loopback not set
+  Keepalive interval is 10 sec , set
+  Carrier delay is 2 sec
+  Rxload is 1/255, Txload is 1/255
+  Switchport attributes:
+    interface's description:""
+    admin medium-type is Copper, oper medium-type is Copper
+    lastchange time: 0 Day: 1 Hour:12 Minute:14 Second
+    current status duration: 0 Day: 0 Hour: 8 Minute:45 Second
+    Priority is 0
+    admin duplex mode is AUTO, oper duplex is Full
+    admin speed is AUTO, oper speed is 1000M
+    flow control admin status is OFF, flow control oper status is OFF
+    admin negotiation mode is OFF, oper negotiation state is ON
+    Storm Control: Broadcast is ON, Multicast is OFF, Unicast is ON
+  Port-type: access
+    Vlan id: 1
+  5 minutes input rate 736 bits/sec, 0 packets/sec
+  5 minutes output rate 842 bits/sec, 0 packets/sec
+          
+14-S5750-2#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+14-S5750-2(config)#*Sep 16 15:35:29: %LLDP-4-AGEOUTREM: Port GigabitEthernet 0/23 one neighbor aged out, Chassis ID is 5869.6c15.59cc, Port ID is Gi0/23.
+*Sep 16 15:36:04: %LINK-3-UPDOWN: Interface GigabitEthernet 0/1, changed state to down.
+*Sep 16 15:36:04: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/1, changed state to down.
+
+14-S5750-2(config)#vlan 5
+14-S5750-2(config-vlan)#name sales
+14-S5750-2(config-vlan)#exit
+14-S5750-2(config)#interface gigabitethernet 0/1
+14-S5750-2(config-if-GigabitEthernet 0/1)#switchport access vlan 5
+14-S5750-2(config-if-GigabitEthernet 0/1)#exit
+14-S5750-2(config)#*Sep 16 15:36:56: %LINK-3-UPDOWN: Interface GigabitEthernet 0/1, changed state to up.
+*Sep 16 15:36:56: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/1, changed state to up.
+
+14-S5750-2#*Sep 16 15:38:53: %SYS-5-CONFIG_I: Configured from console by console
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+14-S5750-2(config)#
+14-S5750-2(config)#exit
+14-S5750-2#*Sep 16 15:39:05: %SYS-5-CONFIG_I: Configured from console by console
+
+14-S5750-2#
+14-S5750-2#
+14-S5750-2#ping 192.168.10.20
+Sending 5, 100-byte ICMP Echoes to 192.168.10.20, timeout is 2 seconds:
+  < press Ctrl+C to break >
+.....
+Success rate is 0 percent (0/5)
+14-S5750-2#configure
+Enter configuration commands, one per line.  End with CNTL/Z.
+14-S5750-2(config)#interface gigabitethernet 0/24
+14-S5750-2(config-if-GigabitEthernet 0/24)#switchport mode hybrid
+14-S5750-2(config-if-GigabitEthernet 0/24)#exit
+14-S5750-2(config)#*Sep 16 15:45:07: %LINK-3-UPDOWN: Interface GigabitEthernet 0/24, changed state to down.
+*Sep 16 15:45:07: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/24, changed state to down.
+*Sep 16 15:45:15: %LINK-3-UPDOWN: Interface GigabitEthernet 0/24, changed state to up.
+*Sep 16 15:45:15: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet 0/24, changed state to up.
